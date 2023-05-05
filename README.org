@@ -1,0 +1,19 @@
+* yasser.page
+
+my home inside the web, here will flow my:
+
+- notes and blog
+- portfolio
+- things that i enjoy (mostly links)
+- songs of love and dispair
+- and more
+
+** TODO setup [50%]
+
+- [X] add prettier
+- [ ] add eslint
+
+** TODO styling [%]
+
+- [ ] add unocss
+- [ ] setup markdown + prose
