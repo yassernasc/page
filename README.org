@@ -2,18 +2,22 @@
 
 my home inside the web, here will flow my:
 
-- notes and blog
-- portfolio
-- things that i enjoy (mostly links)
+- thoughts, notes and blog
+- things i enjoy (mostly links)
+- projects portfolio
+- professional CV
 - songs of love and dispair
-- and more
+- and much more
 
-** TODO setup [50%]
+*** roadmap [2/10]
 
 - [X] add prettier
-- [ ] add eslint
-
-** TODO styling [%]
-
+- [X] add homepage content
 - [ ] add unocss
-- [ ] setup markdown + prose
+- [ ] add goatcounter
+- [ ] check the better way to convert .org to .md
+- [ ] ensure front matter works
+- [ ] use prose on markdown
+- [ ] create rss feed
+- [ ] be invited to lobste.rs
+- [ ] be invited to IndieWeb
