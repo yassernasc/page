@@ -14,7 +14,9 @@
     "astro": "^2.1.7"
   },
   "devDependencies": {
+    "@unocss/preset-typography": "^0.52.7",
     "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.8.0"
+    "prettier-plugin-astro": "^0.8.0",
+    "unocss": "^0.52.7"
   }
 }

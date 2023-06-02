@@ -1,3 +1,4 @@
 import { defineConfig } from 'astro/config'
+import css from 'unocss/astro'
 
-export default defineConfig({})
+export default defineConfig({ integrations: [css()] })
