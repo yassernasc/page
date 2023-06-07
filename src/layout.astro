@@ -1,0 +1,29 @@
+---
+const { frontmatter } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="font-serif prose prose-slate mx-auto p-8">
+    <slot />
+  </body>
+</html>
+
+<script is:inline>
+  const isProd = window.location.host.endsWith('yasser.page')
+  if (!isProd) {
+    window.goatcounter = { no_onload: true } // skip counter
+  }
+</script>
+
+<script
+  is:inline
+  data-goatcounter="https://yasser-page.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js"
+></script>
