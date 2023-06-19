@@ -9,15 +9,16 @@ my home inside the web, here will flow my:
 - songs of love and dispair
 - and much more
 
-*** roadmap [5/10]
+*** roadmap [7/11]
 
 - [X] add prettier
 - [X] add homepage content
 - [X] add unocss
 - [X] add goatcounter
 - [X] use prose on markdown
-- [ ] check the better way to convert .org to .md
-- [ ] ensure front matter works
+- [X] check the better way to convert .org to .md
+- [X] ensure front matter works
+- [ ] setup writing env on ipad
 - [ ] create rss feed
 - [ ] be invited to lobste.rs
 - [ ] be invited to IndieWeb

@@ -1,0 +1,26 @@
+#+title: yasser.page
+
+* Yasser's web page
+
+*** Programmer based in Brazil
+
+#+begin_quote
+Open to contribute, long-term and full-time jobs included 🤙
+#+end_quote
+
+\\
+
+I have profissional experience with /TypeScript Full-Stack development/, mostly working with Angular, React and Node.js. More details can be found on [[https://read.cv/yassernasc][my CV]].
+
+I've quit my job and now I'm taking a sabbatical, on that period I took some weeks to rest my tired mind and then started to refresh my skills, I learned a new programming language: /Golang/; Dived into /Flutter/ for mobile development; now I use Emacs for writing and as a bonus I maintain a home server running Arch Linux (yes, I know).
+
+While I'm still working on some personal projects and experiments, I'm also totally open for a chat, [[https://cal.com/yassernasc/chat][schedule a meeting]]; Or simply [[maito:dev@yasser.email][email me]], I truly enjoy both approaches.
+
+Current English level: I know how to write Environment, Thought and Length without googling any, that's dope, right?
+
+\\
+
+*Find me also on:*
+
+- [[https://github.com/yassernasc][Github]]
+- [[https://linkedin.com/in/yassernasc][Linkedin]]
