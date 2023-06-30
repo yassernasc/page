@@ -2,7 +2,10 @@ import { defineConfig } from 'astro/config'
 import css from 'unocss/astro'
 
 const setDefaultLayout = () => (tree, file) => {
-  file.data.astro.frontmatter.layout = '@layouts/base.astro'
+  const isPage = file.data.astro.frontmatter.title !== undefined
+  if (isPage) {
+    file.data.astro.frontmatter.layout = '@layouts/base.astro'
+  }
 }
 
 export default defineConfig({
