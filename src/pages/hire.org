@@ -1,0 +1,16 @@
+#+title: hire me
+
+I have profissional experience with /TypeScript Full-Stack development/, mostly working with Angular, React and Node.js.
+
+I'm available to both part-time and full-time opportunities.
+
+I enjoy to work from home, I'm currently in UTC-3 time zone (similar to US time zone).
+
+Current English level: I know how to write Environment, Thought and Length without googling any, that's dope, right?
+
+\\
+
+*Links*
+
+- [[https://read.cv/yassernasc][cv]]
+- [[https://linkedin.com/in/yassernasc][linkedin]]
