@@ -11,14 +11,14 @@ my home inside the web, here will flow my:
 
 *** architecture
 
-i use org files as astro pages and components, in that way i can use the built-in astro support for markdown which is pretty good (eg. easy config to set a default layout for every page).
+i use org files as astro pages and components converting them to markdown on build time, in that way i can use the built-in astro support for markdown content which is pretty good.
 
 here is the current flow:
 
-emacs' org-mode (accessed with iSH on iPad) →
-git commit →
-vercel automatic build and deploy →
-prepare vercel environment with a shell script (simulating a Dockerfile) →
-convert all .org files to .md using pandoc with a shell script →
-astro →
-fair css styles by default with unocss's prose
+1. emacs' org-mode (accessed with iSH on iPad)
+2. git commit
+3. vercel automatic build and deploy
+4. prepare vercel environment with a shell script (simulating a Dockerfile)
+5. convert all .org files to .md using pandoc with a shell script
+6. normal astro usage
+7. fair styles by default with unocss' prose
