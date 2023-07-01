@@ -16,3 +16,5 @@ I enjoy movies, unix, minimalism & more
 *Web presence*
 
 - [[https://github.com/yassernasc][github]]
+- [[https://letterboxd.com/yassern][letterboxd]]
+- [[https://pinterest.com/yassernasc][pinterest]]
