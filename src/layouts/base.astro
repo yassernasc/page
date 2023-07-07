@@ -10,10 +10,10 @@ const { frontmatter } = Astro.props
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{frontmatter.title}</title>
+    <title>{frontmatter.page_title}</title>
   </head>
   <body
-    class="prose prose-slate dark:bg-stone-900 dark:prose-invert dark:prose-violet font-serif mx-auto mt-16 p-8"
+    class="prose prose-stone dark:bg-stone-900 dark:prose-invert dark:prose-purple font-sans mx-auto mt-16 p-8"
   >
     <Beam />
     <slot />

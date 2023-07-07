@@ -10,5 +10,8 @@ const setDefaultLayout = () => (tree, file) => {
 
 export default defineConfig({
   integrations: [css()],
-  markdown: { remarkPlugins: [setDefaultLayout] },
+  markdown: {
+    remarkPlugins: [setDefaultLayout],
+    shikiConfig: { theme: 'min-dark' },
+  },
 })
