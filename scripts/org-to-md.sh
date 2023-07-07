@@ -2,7 +2,10 @@
 
 cd src
 
-for ORG_FILE in **/*.org
+# bash globbing not entirely recursive?
+FILES="$(echo **/*.org) $(echo **/**/*.org)"
+
+for ORG_FILE in $FILES
 do
     FILENAME=$(basename $ORG_FILE .org)
 

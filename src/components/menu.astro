@@ -1,0 +1,55 @@
+---
+import { groupBy, toPairs, pipe, prop } from 'remeda'
+
+const rawPages = await Astro.glob('../pages/**/*.md')
+
+const getLabel = path => {
+  const filename = path.split('/').pop().split('.')[0].replaceAll('-', ' ')
+  return filename === 'index' ? 'home' : filename
+}
+
+const getParentDir = path =>
+  path.split('/').slice(0, -1).pop().replaceAll('-', ' ')
+
+const pages = rawPages
+  .filter(page => !page.frontmatter.draft)
+  .map(page => ({
+    label: getLabel(page.file),
+    parentDir: getParentDir(page.file),
+    url: page.url === '' ? '/' : page.url,
+  }))
+
+const groupedPages = pipe(pages, groupBy(prop('parentDir')), toPairs)
+---
+
+<hr />
+
+<p>
+  <strong>Menu navigation</strong>
+</p>
+<ul>
+  {
+    groupedPages.map(([folder, items]) => {
+      if (folder === 'pages') {
+        return items.map(p => (
+          <li>
+            <a href={p.url}>{p.label}</a>
+          </li>
+        ))
+      } else {
+        return (
+          <li>
+            {folder}
+            <ul class="m-0">
+              {items.map(p => (
+                <li>
+                  <a href={p.url}>{p.label}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        )
+      }
+    })
+  }
+</ul>

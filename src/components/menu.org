@@ -1,6 +1,0 @@
------
-
-*Menu navigation*
-
-- [[./][home]]
-- [[./hire][hire]]

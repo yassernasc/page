@@ -20,5 +20,5 @@ here is the current flow:
 3. vercel automatic build and deploy
 4. prepare vercel environment with a shell script (simulating a Dockerfile)
 5. convert all .org files to .md using pandoc with a shell script
-6. normal astro usage
+6. astro built-in support for remark/rehype converts .md to .html
 7. fair styles by default with unocss' prose

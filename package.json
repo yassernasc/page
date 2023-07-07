@@ -14,7 +14,8 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
-    "astro": "^2.1.7"
+    "astro": "^2.1.7",
+    "remeda": "^1.23.0"
   },
   "devDependencies": {
     "@unocss/preset-typography": "^0.52.7",
