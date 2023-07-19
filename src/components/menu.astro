@@ -1,7 +1,10 @@
 ---
 import { groupBy, toPairs, pipe, prop } from 'remeda'
 
-const rawPages = await Astro.glob('../pages/**/*.md')
+const rawMdPages = await Astro.glob('../pages/**/*.md')
+const rawAstroPages = await Astro.glob('../pages/**/*.astro')
+
+const rawPages = [...rawMdPages, ...rawAstroPages]
 
 const getLabel = path => {
   const filename = path.split('/').pop().split('.')[0].replaceAll('-', ' ')
@@ -12,7 +15,7 @@ const getParentDir = path =>
   path.split('/').slice(0, -1).pop().replaceAll('-', ' ')
 
 const pages = rawPages
-  .filter(page => !page.frontmatter.draft)
+  .filter(page => !page.frontmatter?.draft)
   .map(page => ({
     label: getLabel(page.file),
     parentDir: getParentDir(page.file),
