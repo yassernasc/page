@@ -1,0 +1,155 @@
+#+page_title: dart notes
+#+description: dart snippets and notes
+
+* [[https://dart.dev/language][dart]]
+
+** dead by TypeScript?
+
+Dart compiles to JavaScript, embraces Type safety, follows the object-oriented paradigm strongly, has support for Enums.. does it remember another language? Although having the same "goals", Dart and TypeScript differs by their approach, principles.
+
+On one hand, *TypeScript* is a superset of JavaScript, that means that any valid "js" code is a valid "ts" code by default and the TypeScript compiler adds some plus features to JavaScript; Examples are decorators, ES6 imports at all environments, OOP interfaces and so on.. which is great.
+
+On another hand, besides adding Type safety related features, *Dart* tries to control all madness that JavaScript brings within, rather than adding even more ways to write certain operations, it tries to guide safe and sane paths; some examples: providing one single way to mean "true" and "false", not dealing with both undefined and null but only with null and so on.. simplicity has its value, which is great. :)
+
+** hello world
+
+#+begin_src dart
+  void main() {
+    print('Hello World');
+  }
+#+end_src
+
+** variables
+
+#+begin_src dart
+  String name; // name is null
+  String? maybeName; // nullable type
+  late String name; // calm down the compiler and ignore possible null problems
+  dynamic name; // untyped
+  var name = 'john doe'; // type inferred to string
+  final name; // final means that it can be assigned once
+  const name = 'rammstein'; // const means that the value should be defined at compile-time, it is a performant choice
+#+end_src
+
+** data structures
+
+*** lists
+
+#+begin_src dart
+  List<String> names = ['arctic', 'monkeys'];
+
+  for (final name in names) {
+    print(name);
+  }
+
+  names.forEach((name) => print(name));
+#+end_src
+
+*** maps
+
+#+begin_src dart
+  Map<String, dynamic> json;
+#+end_src
+
+** functions
+
+#+begin_src dart
+  int add(int x, int y) {
+    return x + y;
+  }
+
+  // with no return type explicitly defined, it is inferred
+  add(int x, int y) {
+    return x + y;
+  }
+#+end_src
+
+*** optional parameters
+
+#+begin_src dart
+  int add(int x, int y, [int z]) {}
+#+end_src
+
+*** default values
+
+#+begin_src dart
+  int add(int x, int y, [int z = 5]) {
+    return x + y + z;
+  }
+#+end_src
+
+*** lambda function
+
+#+begin_src dart
+  add(int x, int y, [int z = 5]) => x + y + z;
+#+end_src
+
+*** named parameters
+
+#+begin_src dart
+  void debugger({String message, int lineNum}) {}
+  debugger(message: '..', lineNum: 44);
+
+  //  with named parameters, all parameters are optional by default
+  Widget build({@required Widget child}) {}
+#+end_src
+
+** object-oriented
+
+*Everything* in Dart is an object, that mantra includes: numbers, objects and the null value.
+
+#+begin_src dart
+  class Music {
+    String name;
+    int duration;
+
+    // constructor with syntax sugar
+    Music(this.name, this.duration);
+
+    // polymorphism
+    Music(int duration) {
+      this.name = 'A mistery'
+      this.duration = duration;
+    }
+  }
+
+  // the new keyword is valid but not required
+  Music elizabeth = Music('Elizabeth', 304)
+#+end_src
+
+*** special constructors
+
+#+begin_src dart
+  class Point {
+    final double x;
+    final double y;
+
+    Point(this.x, this.y);
+
+    // named constructor
+    Point.origin() {
+      return Point(0, 0)
+    }
+
+    // factories might return an instance from a cache
+    factory Point.maybeCached() {}
+
+  }
+#+end_src
+
+** enum
+
+#+begin_src dart
+  enum Color { red, gree, blue }
+
+  void updateColor (Color color) {}
+
+  updateColor(Color.blue);
+#+end_src
+
+** open questions
+
+- Can class contructors have named parameters?
+- How to create decorators?
+- Future/async usage
+- mixins usage
