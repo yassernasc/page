@@ -1,0 +1,14 @@
+#+page_title: devs
+#+description: curated list of personal websites from software developers
+
+* devs
+
+List of personal websites that I enjoy and are a real inspiration to me
+
+- https://j3s.sh/
+- https://yossarian.net/
+- https://manuelmoreale.com/
+- https://taylor.town/
+- https://nora.codes/
+- https://ranger.mauve.moe/
+- https://bt.ht/
