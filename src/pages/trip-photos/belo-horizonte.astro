@@ -1,0 +1,12 @@
+---
+import Album from '@layouts/album.astro'
+
+const frontmatter = {
+  page_title: 'Belo Horizonte 🇧🇷',
+  description: 'photos of my trip to belo horizonte, brazil',
+}
+
+const photos = await Astro.glob('./bh/*.webp')
+---
+
+<Album frontmatter={frontmatter} photos={photos} />

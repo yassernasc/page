@@ -1,26 +1,12 @@
 ---
-import Layout from '@layouts/base.astro'
+import Album from '@layouts/album.astro'
+
 const frontmatter = {
   page_title: 'Gramado 🇧🇷',
   description: 'photos of my trip to gramado, brazil',
 }
 
-const rawImages = await Astro.glob('./gramado/*.webp')
-const images = rawImages.map(r => r.default)
+const photos = await Astro.glob('./gramado/*.webp')
 ---
 
-<Layout frontmatter={frontmatter}>
-  <h1>{frontmatter.page_title}</h1>
-  <div class="gap-4 columns-1 sm:columns-2 md:columns-3 2xl:columns-4">
-    {
-      images.map((image, index) => (
-        <img
-          class="rounded drop-shadow mb-3 hover:sepia"
-          src={image}
-          alt={`photo number #${index + 1}`}
-          loading="lazy"
-        />
-      ))
-    }
-  </div>
-</Layout>
+<Album frontmatter={frontmatter} photos={photos} />
