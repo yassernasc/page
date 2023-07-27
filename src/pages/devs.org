@@ -1,14 +1,16 @@
 #+page_title: devs
 #+description: curated list of personal websites from software developers
 
-* devs
+#+begin_quote
+  list of personal websites that i enjoy and are a real inspiration to me, unordered
+#+end_quote
 
-List of personal websites that I enjoy and are a real inspiration to me
-
-- https://j3s.sh/
-- https://yossarian.net/
-- https://manuelmoreale.com/
-- https://taylor.town/
-- https://nora.codes/
-- https://ranger.mauve.moe/
-- https://bt.ht/
+- [[https://j3s.sh/][j3s.sh/]]
+- [[https://yossarian.net/][yossarian.net/]]
+- [[https://manuelmoreale.com/][manuelmoreale.com/]]
+- [[https://taylor.town/][taylor.town/]]
+- [[https://val.packett.cool/][val.packett.cool/]]
+- [[https://nora.codes/][nora.codes/]]
+- [[https://ranger.mauve.moe/][ranger.mauve.moe/]]
+- [[https://bt.ht/][bt.ht/]]
+- [[https://growl.space/][growl.space/]]
