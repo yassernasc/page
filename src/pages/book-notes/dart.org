@@ -58,7 +58,7 @@ On another hand, besides adding Type safety related features, *Dart* tries to co
     return x + y;
   }
 
-  // with no return type explicitly defined, it is inferred
+  // with no return type explicitly defined, it is inferred, is recommended to be explict
   add(int x, int y) {
     return x + y;
   }
@@ -91,7 +91,7 @@ On another hand, besides adding Type safety related features, *Dart* tries to co
   debugger(message: '..', lineNum: 44);
 
   //  with named parameters, all parameters are optional by default
-  Widget build({@required Widget child}) {}
+  Widget build({required Widget child}) {}
 #+end_src
 
 ** object-oriented
@@ -128,12 +128,25 @@ On another hand, besides adding Type safety related features, *Dart* tries to co
 
     // named constructor
     Point.origin() {
-      return Point(0, 0)
+      return Point(0, 0);
     }
+
+    // create a named constructor that redirects to another constructor
+    Point.horizontally(double x) : this(x, null);
 
     // factories might return an instance from a cache
     factory Point.maybeCached() {}
+  }
+#+end_src
 
+*** other things
+
+#+begin_src dart
+  class Point {
+    ...
+
+    // getter
+    double get sum => this.x + this.y
   }
 #+end_src
 
@@ -142,14 +155,7 @@ On another hand, besides adding Type safety related features, *Dart* tries to co
 #+begin_src dart
   enum Color { red, gree, blue }
 
-  void updateColor (Color color) {}
+  void updateColor(Color color) {}
 
   updateColor(Color.blue);
 #+end_src
-
-** open questions
-
-- Can class contructors have named parameters?
-- How to create decorators?
-- Future/async usage
-- mixins usage
