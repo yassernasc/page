@@ -12,5 +12,5 @@ do
     DIRNAME=$(dirname $ORG_FILE)
     OUTPUT=${DIRNAME}/${FILENAME}.md
 
-    pandoc $ORG_FILE --standalone --from org+smart --filter org-meta-filter --output $OUTPUT
+    pandoc $ORG_FILE --standalone --from org --filter org-meta-filter --to gfm --output $OUTPUT
 done
