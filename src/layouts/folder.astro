@@ -1,0 +1,12 @@
+---
+import Layout from '@layouts/base.astro'
+import Listing from '@layouts/directory-listing.astro'
+
+const { description, name } = Astro.props
+
+const frontmatter = { page_title: name.replaceAll('-', ' '), description }
+---
+
+<Layout frontmatter={frontmatter}>
+  <Listing folder={name} />
+</Layout>

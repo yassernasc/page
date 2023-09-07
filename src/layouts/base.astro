@@ -1,9 +1,11 @@
 ---
 import { SEO } from 'astro-seo'
-import Beam from '@components/beam.astro'
-import Menu from '@components/menu.astro'
+import '@styles/global.css'
 
 const { frontmatter } = Astro.props
+
+const title =
+  frontmatter.page_title === 'pages' ? 'yasser.page' : frontmatter.page_title
 ---
 
 <html lang="en">
@@ -12,12 +14,10 @@ const { frontmatter } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <SEO description={frontmatter.description} />
-    <title>{frontmatter.page_title}</title>
+    <title>{title}</title>
   </head>
   <body>
-    <Beam />
     <slot />
-    <Menu />
     <script is:inline>
       const isProd = window.location.host.endsWith('yasser.page')
       if (!isProd) {
