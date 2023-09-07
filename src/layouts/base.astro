@@ -14,9 +14,7 @@ const { frontmatter } = Astro.props
     <SEO description={frontmatter.description} />
     <title>{frontmatter.page_title}</title>
   </head>
-  <body
-    class="prose prose-stone dark:bg-stone-900 dark:prose-invert dark:prose-purple font-sans mx-auto mt-16 p-8"
-  >
+  <body>
     <Beam />
     <slot />
     <Menu />
