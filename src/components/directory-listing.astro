@@ -1,0 +1,107 @@
+---
+import {
+  __,
+  head,
+  includes,
+  init,
+  last,
+  map,
+  pipe,
+  replace,
+  split,
+} from 'ramda'
+
+const { folder, label, links } = Astro.props
+
+const KNOWN_FOLDERS = ['book notes', 'trip photos', 'blog', 'contact', 'donate']
+const TYPES = {
+  folder: { icon: 'folder', priority: 1 },
+  link: { icon: 'link', priority: 2 },
+  file: { icon: folder.includes('photos') ? 'image' : 'file', priority: 0 },
+  parent: { icon: 'back', priority: -1 },
+}
+
+const unslash = replace(/-/g, ' ')
+const getFilename = pipe(split('/'), last, split('.'), head, unslash)
+const getParentDir = pipe(split('/'), init, last, unslash)
+const isFolder = includes(__, KNOWN_FOLDERS)
+
+const getType = label => (isFolder(label) ? 'folder' : 'file')
+
+const isRootPage = folder === 'pages'
+const rawPages = await Astro.glob('../pages/**/*.{astro,md}')
+
+const sortFn = (a, b) => {
+  if (a.type === b.type) {
+    return a.label - b.label
+  }
+  return TYPES[a.type].priority - TYPES[b.type].priority
+}
+
+const pages = rawPages
+  .filter(page => !page.frontmatter?.draft)
+  .filter(page => getParentDir(page.file) === folder)
+  .map(page => ({ url: page.url, label: getFilename(page.file) }))
+  .filter(page => page.label !== 'index')
+  .map(page => ({ ...page, type: getType(page.label) }))
+  .concat(links.map(link => ({ ...link, type: 'link' })))
+  .sort(sortFn)
+
+if (!isRootPage) {
+  pages.unshift({ url: '/', label: 'Parent Directory', type: 'parent' }) // add 'back' link
+}
+---
+
+<div class="container">
+  <h1>{folder === 'pages' ? 'index' : unslash(folder)}</h1>
+
+  <hr />
+  <pre>{pages.map(p => (
+    <div class="link container">
+      <div class="img-container">
+        <img src=`/icons/${TYPES[p.type].icon}.png` />
+      </div>
+
+      <a href={p.url}>{p.label}{p.type === 'folder' ? '/' : ''}</a>
+    </div>
+  ))}</pre>
+  <hr />
+</div>
+
+<style>
+  .container {
+    margin: 8px;
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    width: 20px;
+  }
+
+  h1 {
+    font-family: var(--old-style);
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+
+  hr {
+    margin: 8px 0;
+  }
+
+  pre {
+    margin: 13px 0;
+  }
+
+  a {
+    display: block;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  .link {
+    display: flex;
+    align-items: end;
+    gap: 6px;
+  }
+</style>

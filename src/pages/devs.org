@@ -1,5 +1,6 @@
 #+page_title: devs
 #+description: curated list of personal websites from software developers
+#+draft: true
 
 #+begin_quote
   list of personal websites that i enjoy and are a real inspiration to me, unordered

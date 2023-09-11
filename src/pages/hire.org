@@ -1,5 +1,6 @@
 #+page_title: hire me
 #+description: full-stack experienced programmer available to new jobs, hire me
+#+draft: true
 
 I have profissional experience with /TypeScript Full-Stack development/, mostly working with Angular, React and Node.js.
 

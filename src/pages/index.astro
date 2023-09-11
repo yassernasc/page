@@ -1,5 +1,11 @@
 ---
 import Folder from '@layouts/folder.astro'
+
+const links = [
+  { url: 'https://github.com/yassernasc', label: 'github' },
+  { url: 'https://letterboxd.com/yassern', label: 'letterboxd' },
+  { url: 'https://pinterest.com/yassernasc', label: 'pinterest' },
+]
 ---
 
-<Folder name="pages" description="my digital garden" />
+<Folder name="pages" description="my digital garden" links={links} />
