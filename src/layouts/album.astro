@@ -6,12 +6,61 @@ const images = photos.map(r => r.default)
 ---
 
 <Layout frontmatter={frontmatter}>
-  <h1>{frontmatter.page_title}</h1>
-  <div>
-    {
-      images.map((image, index) => (
-        <img src={image} alt={`photo number #${index + 1}`} loading="lazy" />
-      ))
-    }
+  <div class="container">
+    <h1>{frontmatter.page_title}</h1>
+    <div class="images-container">
+      {
+        images.map((image, index) => (
+          <img src={image} alt={`photo number #${index + 1}`} loading="lazy" />
+        ))
+      }
+    </div>
   </div>
 </Layout>
+
+<style>
+  .container {
+    margin: 20px;
+    font-family: var(--geometric-humanist);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .images-container {
+    columns: 3;
+    gap: 5px;
+    margin: 25px 200px;
+  }
+
+  @media (max-width: 800px) {
+    .images-container {
+      columns: 2;
+      margin: 25px 40px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .images-container {
+      columns: 1;
+      margin: 20px 0;
+    }
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  @media (hover: hover) {
+    img {
+      filter: sepia(30%) brightness(60%);
+      transition: filter 0.15s ease;
+    }
+
+    img:hover {
+      filter: sepia(0%) brightness(100%);
+    }
+  }
+</style>

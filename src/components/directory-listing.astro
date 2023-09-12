@@ -48,7 +48,7 @@ const pages = rawPages
   .sort(sortFn)
 
 if (!isRootPage) {
-  pages.unshift({ url: '/', label: 'Parent Directory', type: 'parent' }) // add 'back' link
+  pages.unshift({ url: '/', label: '..', type: 'parent' }) // add 'back' link
 }
 ---
 
@@ -59,7 +59,7 @@ if (!isRootPage) {
   <pre>{pages.map(p => (
     <div class="link container">
       <div class="img-container">
-        <img src=`/icons/${TYPES[p.type].icon}.png` />
+        <img class={p.type === 'parent' ? 'invert' : ''} src=`/icons/${TYPES[p.type].icon}.png` />
       </div>
 
       <a href={p.url}>{p.label}{p.type === 'folder' ? '/' : ''}</a>
@@ -69,18 +69,7 @@ if (!isRootPage) {
 </div>
 
 <style>
-  .container {
-    margin: 8px;
-  }
-
-  .img-container {
-    display: flex;
-    justify-content: center;
-    width: 20px;
-  }
-
   h1 {
-    font-family: var(--old-style);
     margin-bottom: 20px;
     text-transform: capitalize;
   }
@@ -99,9 +88,25 @@ if (!isRootPage) {
     font-size: 13px;
   }
 
+  .container {
+    margin: 8px;
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    width: 20px;
+  }
+
   .link {
     display: flex;
     align-items: end;
     gap: 6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .invert {
+      filter: invert(0.85);
+    }
   }
 </style>
