@@ -1,6 +1,0 @@
-[submodule "src/pages/book-notes"]
-	path = src/pages/book-notes
-	url = https://github.com/yassernasc/book-notes.git
-[submodule "src/pages/blog"]
-	path = src/pages/blog
-	url = https://github.com/yassernasc/blog.git
