@@ -1,0 +1,58 @@
+#+subject: svelte
+
+* svelte
+
+** hello world
+#+begin_src svelte
+  <script>
+    let name = 'world';
+  </script>
+
+  <h1>Hello {name}!</h1><script>
+#+end_src
+
+** handle event
+#+begin_src svelte
+  <script>
+    let count = 0;
+    const incrementCount = () => count += 1;
+  </script>
+
+  <button on:click={incrementCount}>
+    Clicked {count} {count === 1 ? 'time' : 'times'}
+  </button>
+#+end_src
+
+** component input
+#+begin_src svelte
+  <script>
+    export let answer = 'default value';
+  </script>
+
+  <p>The answer is {answer}</p>
+#+end_src
+
+** handle promise
+#+begin_src svelte
+  <script>
+    export let promise;
+  </script>
+
+  {#await promise}
+  <p>...waiting</p>
+  {:then result}
+  <p>The result is {result}</p>
+  {:catch error}
+  <p style="color: red">{error.message}</p>
+  {/await}
+#+end_src
+
+** property binding
+#+begin_src svelte
+  <script>
+    let name = 'world';
+  </script>
+
+  <input bind:value={name}>
+  <h1>Hello {name}!</h1>
+#+end_src

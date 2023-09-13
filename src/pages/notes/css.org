@@ -1,0 +1,101 @@
+#+subject: css
+
+* CSS
+
+#+begin_quote
+CSS is a simple mechanism for adding style to Web documents
+#+end_quote
+
+** flexbox
+
+[[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox][mdn docs]]
+[[https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox][mdn guide]]
+
+*** flow
+
+#+begin_src css
+  flex-direction: column;  /* Main Axis definition; default: row */
+  flex-wrap: wrap;         /* what happens when the space ends? */
+  flex-flow: column wrap;  /* shorthand the properties above */
+#+end_src
+
+*** justify and align
+
+#+begin_src css
+  justify-content: space-evenly;  /* main axis */
+  align-items: center;            /* cross axis */
+  align-content: space-between;   /* justify cross axis */
+  align-self: stretch;            /* anarchist item overwrites cross axis */
+  gap: 10px;                      /* row-gap and column-gap available too */
+#+end_src
+
+[[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container][mdn]]
+
+*** flex items
+
+#+begin_src css
+  flex-grow: 1;       /* grow proportion in main axis */
+  flex-shrink: ?;
+  flex-basis: ?;
+  margin-left: auto;  /* valid trick to separate items */
+#+end_src
+
+** animation / transitions / transforms
+
+#+begin_src css
+  animation-duration: 3s;
+  animation-iteration-count: infinite; /* or some number */
+  animation-direction: alternate;
+  animation-name: my-animation;
+  animation-timing-function: ease;     /* cubic-bezier, steps */
+  animation-delay: 1s;
+  animation-play-state: paused;
+  animation-fill-mode: both;           /* persist Start and/or End styles of keyframes */
+
+  animation: name duration timing delay interation direction fill state;
+#+end_src
+
+[[https://web.dev/patterns/animation/][web.dev samples]]
+
+#+begin_src css
+  @keyframes my-animation {
+    from {}
+    50% {}
+    to {}
+  }
+#+end_src
+
+#+begin_src css
+  transition-property: font-size;    /* can be 'all' */
+  transition-duration: 4s;
+  transition-timing-function: ease;  /* same as animation */
+  transition-delay: 2s;
+
+  transition: property duration timing delay;
+  transition: width 2s, height 2s;   /* multiple */
+#+end_src
+
+
+** overall principles
+
+*** governance
+
+The World Wide Web Consortium (W3C), more specifically the CSS working group, maintains the CSS standards.
+
+[[https://github.com/w3c/csswg-drafts][w3c's official issue tracker]]
+
+*** levels, not versions
+
+CSS Level 1 → Old & Obsolete
+
+CSS Level 2 → Level 2 is the current W3C Recommendation. CSS2.1 fixes some mistakes.
+
+CSS Level 3 → Uses CSS2.1 as starting point, started modular incrementation.
+
+CSS Level 4 → Will never exist, each module has your own level.
+
+*** compatibility
+
+Forward: e.g. CSS1 user agents will be able to read CSS 2.1 style sheets and discard parts they do not understand.
+
+Backward: e.g. CSS 2.1 user agents will be able to understand CSS1 style sheets.

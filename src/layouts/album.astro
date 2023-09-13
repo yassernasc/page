@@ -20,17 +20,20 @@ const images = photos.map(r => r.default)
 
 <style>
   .container {
-    margin: 20px;
+    --image-gap: 2.5px;
     font-family: var(--geometric-humanist);
+    margin: 20px;
   }
 
   h1 {
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
   }
 
   .images-container {
     columns: 3;
-    gap: 5px;
+    gap: var(--image-gap);
     margin: 25px 200px;
   }
 
@@ -50,12 +53,12 @@ const images = photos.map(r => r.default)
 
   img {
     height: auto;
-    max-width: 100%;
+    margin-bottom: var(--image-gap);
   }
 
   @media (hover: hover) {
     img {
-      filter: sepia(30%) brightness(60%);
+      filter: sepia(45%) brightness(68%);
       transition: filter 0.15s ease;
     }
 

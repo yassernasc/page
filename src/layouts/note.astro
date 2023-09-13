@@ -1,0 +1,72 @@
+---
+import Layout from '@layouts/base.astro'
+
+const { frontmatter } = Astro.props
+---
+
+<Layout frontmatter={frontmatter}>
+  <div class="container">
+    <slot />
+  </div>
+</Layout>
+
+<style is:inline>
+  .container {
+    font-family: var(--mono);
+    margin: 40px auto;
+    max-width: 40rem;
+  }
+
+  h1,
+  a {
+    font-family: var(--old-style);
+  }
+
+  h2,
+  h3,
+  strong {
+    font-family: var(--humanista);
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    text-decoration: underline;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 0.6rem;
+    padding-top: 0.25rem;
+  }
+
+  p {
+    font-size: 0.88rem;
+    margin-top: 0.15rem;
+    padding-top: 0.08rem;
+    text-align: justify;
+  }
+
+  pre {
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+    padding: 12px 20px;
+  }
+
+  a {
+    display: block;
+    font-family: var(--old-style);
+  }
+
+  blockquote {
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding-top: 0.2rem;
+  }
+</style>

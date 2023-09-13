@@ -13,7 +13,7 @@ import {
 
 const { folder, label, links } = Astro.props
 
-const KNOWN_FOLDERS = ['book notes', 'trip photos', 'blog', 'contact', 'donate']
+const KNOWN_FOLDERS = ['notes', 'trip photos', 'blog', 'contact', 'donate']
 const TYPES = {
   folder: { icon: 'folder', priority: 1 },
   link: { icon: 'link', priority: 2 },
@@ -56,20 +56,29 @@ if (!isRootPage) {
   <h1>{folder === 'pages' ? 'index' : unslash(folder)}</h1>
 
   <hr />
-  <pre>{pages.map(p => (
-    <div class="link container">
-      <div class="img-container">
-        <img class={p.type === 'parent' ? 'invert' : ''} src=`/icons/${TYPES[p.type].icon}.png` />
-      </div>
+  <pre>{
+    pages.map((p) => {
+      const image = `/icons/${TYPES[p.type].icon}.png`;
+      const imageClass = p.type === "parent" ? "invert" : ""
 
-      <a href={p.url}>{p.label}{p.type === 'folder' ? '/' : ''}</a>
-    </div>
-  ))}</pre>
+      return (
+        <div class="link container">
+          <div class="img-container">
+            <img class={imageClass} src={image} />
+          </div>
+          <a href={p.url}>{p.label}{p.type === "folder" ? "/" : ""}</a>
+        </div>
+      )
+    })
+  }</pre>
   <hr />
 </div>
 
 <style>
   h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
     margin-bottom: 20px;
     text-transform: capitalize;
   }
@@ -85,7 +94,7 @@ if (!isRootPage) {
   a {
     display: block;
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: 0.8rem;
   }
 
   .container {
