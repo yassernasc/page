@@ -6,7 +6,7 @@ import '@styles/global.css'
 const { frontmatter } = Astro.props
 
 const title =
-  frontmatter.page_title === 'pages' ? 'yasser.page' : frontmatter.page_title
+  frontmatter.page_title === 'pages' ? '/' : frontmatter.page_title
 ---
 
 <html lang="en">
@@ -20,7 +20,7 @@ const title =
   <body>
     <slot />
     <script is:inline>
-      const isProd = window.location.host.endsWith('yasser.page')
+      const isProd = window.location.host.endsWith('.com')
       if (!isProd) {
         window.goatcounter = { no_onload: true } // skip counter
       }
