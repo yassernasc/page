@@ -5,8 +5,7 @@ import '@styles/global.css'
 
 const { frontmatter } = Astro.props
 
-const title =
-  frontmatter.page_title === 'pages' ? '/' : frontmatter.page_title
+const title = frontmatter.page_title
 ---
 
 <html lang="en">

@@ -3,8 +3,10 @@ import Layout from '@layouts/base.astro'
 import Listing from '@components/directory-listing.astro'
 
 const { description, name, links = [] } = Astro.props
+const title = name === 'pages' ? '' : name.replaceAll('-', ' ')
+const pageTitle = `Index of ${title}/`
 
-const frontmatter = { page_title: name.replaceAll('-', ' '), description }
+const frontmatter = { page_title: pageTitle, description }
 ---
 
 <Layout frontmatter={frontmatter}>
