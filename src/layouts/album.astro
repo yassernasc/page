@@ -6,17 +6,21 @@ const images = photos.map(r => r.default)
 ---
 
 <Layout frontmatter={frontmatter}>
-  <div class="container">
-    <h1>{frontmatter.page_title}</h1>
-    <div class="images-container">
-      {
-        images.map((image, index) => (
-          <img src={image} alt={`photo number #${index + 1}`} loading="lazy" />
-        ))
-      }
-    </div>
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇧🇷</text></svg>"
+  />
+</Layout>"
+<div class="container">
+  <h1>{frontmatter.page_title}</h1>
+  <div class="images-container">
+    {
+      images.map((image, index) => (
+        <img src={image} alt={`photo number #${index + 1}`} loading="lazy" />
+      ))
+    }
   </div>
-</Layout>
+</div>
 
 <style is:inline>
   .container {
