@@ -1,6 +1,4 @@
 :root {
-  color-scheme: light dark;
-
   --mono: mononoki, ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
     Consolas, 'DejaVu Sans Mono', monospace;
   --old-style: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052,
