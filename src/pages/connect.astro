@@ -1,0 +1,12 @@
+---
+import Folder from '@layouts/folder.astro'
+
+const links = [
+  { url: 'https://github.com/yassernasc', label: 'github' },
+  { url: 'https://mastodon.social/@yassernasc', label: 'fediverse' },
+  { url: 'https://letterboxd.com/yassernasc', label: 'letterboxd' },
+  { url: 'https://pinterest.com/yassernasc', label: 'pinterest' },
+]
+---
+
+<Folder name="connect" description="web presence" links={links} />

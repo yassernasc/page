@@ -13,7 +13,14 @@ import {
 
 const { folder, label, links } = Astro.props
 
-const KNOWN_FOLDERS = ['notes', 'trip photos', 'blog', 'contact', 'donate']
+const KNOWN_FOLDERS = [
+  'blog',
+  'connect',
+  'contact',
+  'donate',
+  'notes',
+  'trip photos',
+]
 const TYPES = {
   folder: { icon: 'folder', priority: 1 },
   link: { icon: 'link', priority: 2 },
