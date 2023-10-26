@@ -1,0 +1,304 @@
+---
+import { SEO } from 'astro-seo'
+import Analytics from '@components/analytics.astro'
+import GlobalStyles from '@components/global-styles.astro'
+
+const description = 'Browser extension to use wikipedia reading lists'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <SEO description={description} />
+    <title>Wiki Lists</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codex-design-tokens/1.0.0/theme-wikimedia-ui.css"
+    />
+  </head>
+  <body>
+    <GlobalStyles />
+    <header>
+      <div class="title">
+        <img
+          src="https://raw.githubusercontent.com/yassernasc/wikipedia-lists/main/assets/icon_128x128.png"
+        />
+        <h1>Wiki Lists</h1>
+      </div>
+
+      <h2>
+        Browser extension to use wikipedia reading lists, just like in the apps
+      </h2>
+    </header>
+
+    <main>
+      <div class="why">
+        <h2>Why?</h2>
+        <p>
+          The year was 2018 and Wikipedia released <a
+            href="https://wikimediafoundation.org/news/2018/05/25/synced-reading-lists/"
+            >Synced reading lists for its mobile apps</a
+          >, but what about the Browser and Desktop? 5 years later, the <a
+            href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Reading_list_browser_extension"
+            >official extension</a
+          > remains pretty minimalist.
+        </p>
+        <p>
+          I have found Wikipedia’s Reading Lists to be a wonderful way to
+          organize research. And not being able to manage them on my main work
+          device was the primary motivation for developing the extension. And I
+          truly hope this extension can be useful to other people as well.
+        </p>
+      </div>
+      <div class="principles">
+        <div>
+          <h3>Full-featured</h3>
+          <p>The extension aims to cover all features from mobile apps</p>
+        </div>
+        <div>
+          <h3>Privacy-friendly</h3>
+          <p>No information is stored anywhere by extension’s domains</p>
+        </div>
+        <div>
+          <h3>Fair user experience</h3>
+          <p>
+            The extension follows the <a
+              href="https://design.wikimedia.org/style-guide/"
+              rel="nofollow">Wikipedia’s Design Style Guide</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="browsers">
+        <h2>Supported Browsers</h2>
+        <div class="browsers-list">
+          <a href="https://addons.mozilla.org/addon/wiki-lists/">
+            <div class="browser">
+              <img
+                src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_64x64.png"
+              />
+              <h4>Firefox</h4>
+            </div>
+          </a>
+
+          <a
+            href="https://chrome.google.com/webstore/detail/wikipedia-lists/jdlmiegaioijhgocehohlnplflehmjni/"
+          >
+            <div class="browser">
+              <img
+                src="https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_64x64.png"
+              />
+              <h4>Chrome</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="header">
+          <img
+            src="https://raw.githubusercontent.com/yassernasc/wikipedia-lists/main/assets/icon_128x128.png"
+          />
+          <h2>Wiki Lists</h2>
+        </div>
+
+        <ul>
+          <a href="https://github.com/yassernasc/wikipedia-lists">Code</a>
+          <a href="/contact">Contact</a>
+          <a href="/donate">Donate</a>
+          <div class="rights">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Copyleft_symbol2.svg/1024px-Copyleft_symbol2.svg.png"
+            />
+            <p>2023 by yassernasc</p>
+          </div>
+        </ul>
+      </div>
+    </footer>
+    <Analytics />
+    <style>
+      html {
+        color-scheme: light;
+      }
+
+      body {
+        font-family: var(--font-family-base);
+        color: var(--color-base);
+        line-height: 1.6;
+
+        -moz-osx-font-smoothing: unset;
+        -webkit-font-smoothing: unset;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: black;
+      }
+
+      h1 {
+        font-family: var(--font-family-serif);
+        font-size: 2.3rem;
+      }
+
+      h2 {
+        font-family: var(--font-family-serif);
+        font-size: var(--font-size-xx-large);
+      }
+
+      h3 {
+        font-size: var(--font-size-medium);
+        font-weight: bold;
+      }
+
+      h4 {
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        margin-bottom: 8px;
+      }
+
+      img {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.16));
+      }
+
+      a {
+        color: var(--color-progressive);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:visited {
+        color: var(--color-visited);
+      }
+
+      header,
+      .footer-inner,
+      main,
+      .principles,
+      .browsers {
+        margin: 0 auto;
+        max-width: 50rem;
+        width: 100%;
+      }
+
+      header,
+      .why,
+      .principles,
+      .browsers {
+        padding: 20px 20px 42px 20px;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 60px;
+      }
+
+      header img {
+        width: 54px;
+      }
+
+      header .title {
+        display: flex;
+        gap: 10px;
+        align-items: end;
+      }
+
+      header h2 {
+        text-decoration: underline;
+      }
+
+      main h2 {
+        margin-bottom: 24px;
+      }
+
+      main .principles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      main .principles div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      main .browsers img {
+        width: 52px;
+      }
+
+      main .browsers > div {
+        display: flex;
+        gap: 22px;
+      }
+
+      main .browsers .browser {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+
+      main .browsers a {
+        text-decoration: none;
+        color: var(--color-base);
+      }
+
+      footer {
+        background-color: var(--background-color-interactive);
+      }
+
+      .footer-inner {
+        padding: 62px 20px;
+      }
+
+      footer img {
+        width: 33px;
+      }
+
+      footer .header {
+        display: flex;
+        gap: 8px;
+        align-items: end;
+        margin-bottom: 46px;
+      }
+
+      footer ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      footer ul a {
+        font-size: 0.95rem;
+      }
+
+      footer .rights {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+
+      footer .rights img {
+        width: 20px;
+        filter: none;
+      }
+
+      footer .rights p {
+        align-self: end;
+        margin-bottom: 0;
+      }
+    </style>
+  </body>
+</html>

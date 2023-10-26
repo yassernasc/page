@@ -1,0 +1,13 @@
+<script is:inline>
+  const isProd = window.location.host.endsWith('.com')
+  if (!isProd) {
+    window.goatcounter = { no_onload: true } // skip counter
+  }
+</script>
+
+<script
+  is:inline
+  data-goatcounter="https://yasser-page.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js"
+></script>

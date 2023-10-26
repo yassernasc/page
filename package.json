@@ -14,7 +14,7 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
-    "astro": "^2.1.7",
+    "astro": "^3.3.4",
     "astro-seo": "^0.7.4",
     "ramda": "^0.29.0"
   },
