@@ -16,6 +16,7 @@ const description = 'Browser extension to use wikipedia reading lists'
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codex-design-tokens/1.0.0/theme-wikimedia-ui.css"
     />
+    <link rel="shortcut icon" type="image/jpg" href="/wiki/favicon.png" />
   </head>
   <body>
     <GlobalStyles />
@@ -33,6 +34,10 @@ const description = 'Browser extension to use wikipedia reading lists'
     </header>
 
     <main>
+      <video controls>
+        <source src="/wiki/demo.webm" type="video/webm" />
+      </video>
+
       <div class="why">
         <h2>Why?</h2>
         <p>
@@ -51,6 +56,7 @@ const description = 'Browser extension to use wikipedia reading lists'
           truly hope this extension can be useful to other people as well.
         </p>
       </div>
+
       <div class="principles">
         <div>
           <h3>Full-featured</h3>
@@ -156,7 +162,7 @@ const description = 'Browser extension to use wikipedia reading lists'
 
       h4 {
         font-weight: bold;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       p {
@@ -164,8 +170,16 @@ const description = 'Browser extension to use wikipedia reading lists'
         margin-bottom: 8px;
       }
 
-      img {
+      img,
+      video {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.16));
+      }
+
+      @media (min-width: 600px) {
+        video {
+          width: 80%;
+          margin: auto;
+        }
       }
 
       a {
@@ -193,6 +207,7 @@ const description = 'Browser extension to use wikipedia reading lists'
 
       header,
       .why,
+      video,
       .principles,
       .browsers {
         padding: 20px 20px 42px 20px;
@@ -203,6 +218,7 @@ const description = 'Browser extension to use wikipedia reading lists'
         flex-direction: column;
         gap: 24px;
         margin-top: 60px;
+        padding-bottom: 62px;
       }
 
       header img {
