@@ -6,7 +6,7 @@ import GlobalStyles from '@components/global-styles.astro'
 const description = 'Browser extension to use wikipedia reading lists'
 ---
 
-<html lang="en">
+<html lang="en" class="html">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -18,7 +18,7 @@ const description = 'Browser extension to use wikipedia reading lists'
     />
     <link rel="shortcut icon" type="image/jpg" href="/wiki/favicon.png" />
   </head>
-  <body>
+  <body class="body">
     <GlobalStyles />
     <header>
       <div class="title">
@@ -127,11 +127,11 @@ const description = 'Browser extension to use wikipedia reading lists'
     </footer>
     <Analytics />
     <style>
-      html {
+      .html {
         color-scheme: light;
       }
 
-      body {
+      .body {
         font-family: var(--font-family-base);
         color: var(--color-base);
         line-height: 1.6;

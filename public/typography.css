@@ -3,6 +3,13 @@ body {
   margin: 40px auto;
   max-width: 40rem;
   padding: 10px;
+  color: #232323;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eeeeee;
+  }
 }
 
 h1,
@@ -66,7 +73,6 @@ pre {
 }
 
 a {
-  display: block;
   font-family: var(--rounded-sans);
   font-weight: 500;
 }
@@ -76,4 +82,10 @@ blockquote {
   font-style: italic;
   margin: 1rem 0;
   padding-left: 1rem;
+}
+
+img[alt='Yasser profile image'] {
+  border-radius: 666px;
+  margin: 0 auto;
+  width: 260px;
 }
