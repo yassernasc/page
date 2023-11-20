@@ -28,8 +28,6 @@ I find presenting myself as a hard task, and sometimes I fall into thoughts abou
 
 - watch movies, those melancholic or terrifying are my favorite
 
-- weird music like boogarins - erre and slowdive - miranda
-
 ### And now a list of ideas that I would like to try:
 
 - having a blog
